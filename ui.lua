@@ -449,7 +449,22 @@ do
 
 	drawing = Drawing
 	LPH_NO_VIRTUALIZE(function()
-		drawing = _G.FORCE_REAL_DRAWING and Drawing or loadstring(readfile(file_path .. "/assets/api.lua"))()
+		if _G.FORCE_REAL_DRAWING then
+			drawing = Drawing
+		else
+			local api_src = ""
+			if typeof(isfile) == "function" and isfile(file_path .. "/assets/api.lua") then
+				api_src = readfile(file_path .. "/assets/api.lua") or ""
+			end
+			if #api_src < 100 then
+				local url = "https://raw.githubusercontent.com/panduh16/cove/main/assets/api.lua"
+				pcall(function() api_src = game:HttpGet(url) end)
+				if #api_src < 100 and typeof(request) == "function" then
+					pcall(function() api_src = request({Url = url, Method = "GET"}).Body end)
+				end
+			end
+			drawing = loadstring(api_src)()
+		end
 	end)()
 
 	getgenv()["fake_drawing"] = drawing
