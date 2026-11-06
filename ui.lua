@@ -2,6 +2,25 @@ repeat
 	task["wait"]()
 until game:IsLoaded()
 
+-- > ( base64 decode fallback )
+
+if not base64_decode then
+	local b = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+	base64_decode = function(data)
+		data = string.gsub(data, "[^" .. b .. "=]", "")
+		return data:gsub(".", function(x)
+			if x == "=" then return "" end
+			local r, f = "", (b:find(x) - 1)
+			for i = 6, 1, -1 do r = r .. (f % 2^i - f % 2^(i-1) > 0 and "1" or "0") end
+			return r
+		end):gsub("%d%d%d%d%d%d%d%d", function(x)
+			local c = 0
+			for i = 1, 8 do c = c + (x:sub(i,i) == "1" and 2^(8-i) or 0) end
+			return c > 0 and string.char(c) or ""
+		end)
+	end
+end
+
 -- > ( luraph variables )
 
 if not LPH_OBFUSCATED then
