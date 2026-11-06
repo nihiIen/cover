@@ -1,4 +1,4 @@
-repeat
+﻿repeat
 	task["wait"]()
 until game:IsLoaded()
 
@@ -24,7 +24,7 @@ end
 
 -- > ( global cheat variables )
 
-local file_path = getgenv().custom_folder or "juju recode"
+local file_path = getgenv().custom_folder or "cove recode"
 local user_input_service = cloneref(game:GetService("UserInputService"))
 local get_mouse_location = user_input_service["GetMouseLocation"]
 local players_service = cloneref(game:GetService("Players"))
@@ -296,7 +296,7 @@ local menu = {
 		["error"] = color3_fromrgb(39, 60, 96),
 		["alert"] = color3_fromrgb(30, 51, 61),
 		["logo"] = color3_fromrgb(154, 213, 222),
-		["juju"] = color3_fromrgb(154, 213, 222),
+		["cove"] = color3_fromrgb(154, 213, 222),
 		["build"] = color3_fromrgb(154, 213, 222),
 		["cursor"] = color3_fromrgb(154, 213, 222),
 	},
@@ -339,57 +339,57 @@ do
 
 		local files = {
 			["assets"] = {
-				["api.lua"] = safeHttp("https://raw.githubusercontent.com/panduh16/juju/main/assets/api.lua"),
-				["sparkle.ogg"] = safeHttp("https://raw.githubusercontent.com/panduh16/juju/main/assets/sparkle.ogg"),
-				["skeet.ogg"] = safeHttp("https://raw.githubusercontent.com/panduh16/juju/main/assets/skeet.ogg"),
+				["api.lua"] = safeHttp("https://raw.githubusercontent.com/panduh16/cove/main/assets/api.lua"),
+				["sparkle.ogg"] = safeHttp("https://raw.githubusercontent.com/panduh16/cove/main/assets/sparkle.ogg"),
+				["skeet.ogg"] = safeHttp("https://raw.githubusercontent.com/panduh16/cove/main/assets/skeet.ogg"),
 				["neverlose.ogg"] = safeHttp(
-					"https://raw.githubusercontent.com/panduh16/juju/main/assets/neverlose.ogg"
+					"https://raw.githubusercontent.com/panduh16/cove/main/assets/neverlose.ogg"
 				),
-				["break.ogg"] = safeHttp("https://raw.githubusercontent.com/panduh16/juju/main/assets/break.ogg"),
-				["mc bow.ogg"] = safeHttp("https://raw.githubusercontent.com/panduh16/juju/main/assets/mc%20bow.ogg"),
+				["break.ogg"] = safeHttp("https://raw.githubusercontent.com/panduh16/cove/main/assets/break.ogg"),
+				["mc bow.ogg"] = safeHttp("https://raw.githubusercontent.com/panduh16/cove/main/assets/mc%20bow.ogg"),
 				["primordial.ogg"] = safeHttp(
-					"https://raw.githubusercontent.com/panduh16/juju/main/assets/primordial.ogg"
+					"https://raw.githubusercontent.com/panduh16/cove/main/assets/primordial.ogg"
 				),
-				["rust.ogg"] = safeHttp("https://raw.githubusercontent.com/panduh16/juju/main/assets/rust.ogg"),
-				["sexy.ogg"] = safeHttp("https://raw.githubusercontent.com/panduh16/juju/main/assets/sexy.ogg"),
-				["jaydes.png"] = safeHttp("https://raw.githubusercontent.com/panduh16/juju/main/assets/jaydes.png"),
-				["1.png"] = safeHttp("https://raw.githubusercontent.com/panduh16/juju/main/assets/1.png"),
-				["2.png"] = safeHttp("https://raw.githubusercontent.com/panduh16/juju/main/assets/2.png"),
-				["logo.png"] = safeHttp("https://raw.githubusercontent.com/panduh16/juju/main/assets/logo.png"),
+				["rust.ogg"] = safeHttp("https://raw.githubusercontent.com/panduh16/cove/main/assets/rust.ogg"),
+				["sexy.ogg"] = safeHttp("https://raw.githubusercontent.com/panduh16/cove/main/assets/sexy.ogg"),
+				["jaydes.png"] = safeHttp("https://raw.githubusercontent.com/panduh16/cove/main/assets/jaydes.png"),
+				["1.png"] = safeHttp("https://raw.githubusercontent.com/panduh16/cove/main/assets/1.png"),
+				["2.png"] = safeHttp("https://raw.githubusercontent.com/panduh16/cove/main/assets/2.png"),
+				["logo.png"] = safeHttp("https://raw.githubusercontent.com/panduh16/cove/main/assets/logo.png"),
 				["saturation.png"] = safeHttp(
-					"https://raw.githubusercontent.com/panduh16/juju/main/assets/saturation.png"
+					"https://raw.githubusercontent.com/panduh16/cove/main/assets/saturation.png"
 				),
 			},
 			["custom"] = {
 				["textures.json"] = safeHttp(
-					"https://raw.githubusercontent.com/panduh16/juju/main/assets/textures.json"
+					"https://raw.githubusercontent.com/panduh16/cove/main/assets/textures.json"
 				),
 				["character.rbxm"] = debugRBXM(
 					"custom",
 					"character.rbxm",
-					"https://raw.githubusercontent.com/panduh16/juju/main/assets/character.rbxm"
+					"https://raw.githubusercontent.com/panduh16/cove/main/assets/character.rbxm"
 				),
 				["pinksky.rbxm"] = debugRBXM(
 					"custom",
 					"pinksky.rbxm",
-					"https://raw.githubusercontent.com/panduh16/juju/main/assets/pinksky.rbxm"
+					"https://raw.githubusercontent.com/panduh16/cove/main/assets/pinksky.rbxm"
 				),
-				["crunch.ogg"] = safeHttp("https://raw.githubusercontent.com/panduh16/juju/main/assets/juju.ogg"),
-				["scar.ogg"] = safeHttp("https://raw.githubusercontent.com/panduh16/juju/main/assets/scar.ogg"),
+				["crunch.ogg"] = safeHttp("https://raw.githubusercontent.com/panduh16/cove/main/assets/cove.ogg"),
+				["scar.ogg"] = safeHttp("https://raw.githubusercontent.com/panduh16/cove/main/assets/scar.ogg"),
 				["x hit.rbxm"] = debugRBXM(
 					"custom",
 					"x hit.rbxm",
-					"https://raw.githubusercontent.com/panduh16/juju/main/assets/x%20hit.rbxm"
+					"https://raw.githubusercontent.com/panduh16/cove/main/assets/x%20hit.rbxm"
 				),
 				["blossom aura.rbxm"] = debugRBXM(
 					"custom",
 					"blossom aura.rbxm",
-					"https://raw.githubusercontent.com/panduh16/juju/main/assets/blossom%20aura.rbxm"
+					"https://raw.githubusercontent.com/panduh16/cove/main/assets/blossom%20aura.rbxm"
 				),
-				["spam.json"] = safeHttp("https://raw.githubusercontent.com/panduh16/juju/main/assets/spam.json"),
+				["spam.json"] = safeHttp("https://raw.githubusercontent.com/panduh16/cove/main/assets/spam.json"),
 			},
 			["themes"] = {
-				["default.th"] = safeHttp("https://raw.githubusercontent.com/panduh16/juju/main/assets/default.th"),
+				["default.th"] = safeHttp("https://raw.githubusercontent.com/panduh16/cove/main/assets/default.th"),
 			},
 			["addons"] = {},
 			["configs"] = {},
@@ -763,10 +763,10 @@ do
 		["Transparency"] = 1,
 	})
 
-	local juju_text = drawing_proxy["new"]("Text", {
+	local cove_text = drawing_proxy["new"]("Text", {
 		["Font"] = 1,
 		["Color"] = color3_fromrgb(255, 255, 255),
-		["Text"] = getgenv().script_name or "juju",
+		["Text"] = getgenv().script_name or "cove",
 		["Parent"] = logo,
 		["Position"] = udim2_new(1, 5, 0, 3),
 		["Size"] = 14,
@@ -4022,7 +4022,7 @@ do
 		tween(frame, transparency, exponential, out, 0.18)
 		tween(inside, transparency, exponential, out, 0.18)
 		tween(logo, transparency, exponential, out, 0.18)
-		tween(juju_text, transparency, exponential, out, 0.18)
+		tween(cove_text, transparency, exponential, out, 0.18)
 		tween(build_text, transparency, exponential, out, 0.18)
 		tween(right_side, transparency, exponential, out, 0.18)
 		tween(right_side_divider, transparency, exponential, out, 0.18)
@@ -7297,7 +7297,7 @@ do
 				end)
 
 				if not s then
-					return "juju: addon " .. name .. " experienced an error while loading: " .. err
+					return "cove: addon " .. name .. " experienced an error while loading: " .. err
 				end
 
 				if addon_data[name] then
@@ -7322,7 +7322,7 @@ do
 
 				if not s then
 					spawn(menu["unload_addon"], name)
-					error("juju: addon " .. name .. " experienced an error while loading: " .. err)
+					error("cove: addon " .. name .. " experienced an error while loading: " .. err)
 				end
 			end
 		end
@@ -7451,14 +7451,14 @@ do
 
 			create_connection(
 				settings_section:create_element({
-					["name"] = "unload juju",
+					["name"] = "unload cove",
 				}, {
 					["button"] = {
 						["confirmation"] = true,
 					},
 				})["on_clicked"],
 				function()
-					getgenv()["_JUJU"]()
+					getgenv()["_COVE"]()
 
 					if identifyexecutor() == "AWP" then
 						cleardrawcache()
@@ -7513,18 +7513,18 @@ do
 
 			create_connection(
 				theme_section:create_element({
-					["name"] = "juju color",
+					["name"] = "cove color",
 				}, {
 					["colorpicker"] = {
-						["default_color"] = menu["colors"]["juju"],
+						["default_color"] = menu["colors"]["cove"],
 						["default_transparency"] = 0,
-						["transparency_flag"] = "!juju_transparency",
-						["color_flag"] = "!juju_color",
+						["transparency_flag"] = "!cove_transparency",
+						["color_flag"] = "!cove_color",
 					},
 				})["on_color_change"],
 				function(color)
-					menu["colors"]["juju"] = color
-					juju_text["Color"] = color
+					menu["colors"]["cove"] = color
+					cove_text["Color"] = color
 				end
 			)
 
@@ -8618,7 +8618,7 @@ do
 	-- > ( loading / unloading )
 
 	do
-		local unload = getgenv()["_JUJU"]
+		local unload = getgenv()["_COVE"]
 
 		if unload then
 			unload()
@@ -8640,8 +8640,8 @@ do
 
 		getrawmetatable = env["getrawmetatable"]
 
-		env["_JUJU"] = function()
-			env["_JUJU"] = nil
+		env["_COVE"] = function()
+			env["_COVE"] = nil
 
 			for _, group in menu["groups"] do
 				for _, tab in group["tabs"] do
