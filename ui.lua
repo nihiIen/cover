@@ -337,14 +337,20 @@ do
 
 	do
 		local function safeHttp(url)
-			local ok, res = pcall(function()
-				return game:HttpGet(url)
-			end)
-			if not ok or not res then
-				warn("Failed to fetch:", url)
-				return nil
+			local res
+			if pcall(function() res = game:HttpGet(url) end) and res and #res > 0 then
+				return res
 			end
-			return res
+			if typeof(request) == "function" then
+				local ok, r = pcall(request, {Url = url, Method = "GET"})
+				if ok and r and r.Body and #r.Body > 0 then return r.Body end
+			end
+			if typeof(http) == "table" and typeof(http.request) == "function" then
+				local ok, r = pcall(http.request, {Url = url, Method = "GET"})
+				if ok and r and r.Body and #r.Body > 0 then return r.Body end
+			end
+			warn("Failed to fetch:", url)
+			return nil
 		end
 
 		local function debugRBXM(folder, name, url)
