@@ -1,4 +1,4 @@
-﻿# cove
+# cove
 **[Documentation](https://panduh.gitbook.io/panduh-docs
 )**
 
