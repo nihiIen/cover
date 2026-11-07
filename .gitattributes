@@ -1,0 +1,10 @@
+cover.lua text eol=lf
+loader.lua text eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.mp3 binary
+*.ogg binary
+*.wav binary
