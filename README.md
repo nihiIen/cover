@@ -19,7 +19,15 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/ccoovveerr/cover/mast
 
 The key is `test`. Press **Insert** to open / close the menu. Running it again replaces the old copy cleanly.
 
-In Roblox Studio (or your own game) put `cover.lua` in a LocalScript inside `StarterPlayer > StarterPlayerScripts` instead. Normal Roblox has no `loadstring` / `HttpGet` on the client.
+### In Roblox Studio
+
+`game:HttpGet` only exists in executors, so in Studio cover runs as a LocalScript in `StarterPlayer > StarterPlayerScripts`. To install (or update) it, **stop playing** and paste this into the command bar:
+
+```lua
+local h=game:GetService("HttpService") h.HttpEnabled=true local f=game:GetService("StarterPlayer").StarterPlayerScripts for _,n in ipairs({"cover","CoverMenuTest"}) do local o=f:FindFirstChild(n) if o then o:Destroy() end end local src=h:GetAsync("https://raw.githubusercontent.com/ccoovveerr/cover/master/cover.lua",true) local s=Instance.new("LocalScript") s.Name="cover" game:GetService("ScriptEditorService"):UpdateSourceAsync(s,function() return src end) s.Parent=f print("cover installed ("..#s.Source.." chars), press Play")
+```
+
+Then press Play. It turns on **Allow HTTP Requests** for the place (needed to download the file) and replaces any older copy. It uses `ScriptEditorService` because Roblox won't let code set a script's `Source` past 200,000 characters directly, and `cover.lua` is bigger than that.
 
 After a push, the raw link can take a few minutes to serve the new version.
 
